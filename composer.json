@@ -1,0 +1,16 @@
+{
+    "name": "janbiesiada/point-of-sales",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Jan Biesiada",
+            "email": "jan.biesiada.88@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "JBdev\\PointOfSale\\": "src/"
+        }
+    }
+}
