@@ -1,6 +1,8 @@
-#Requirements:
+# Requirements:
+- composer
 - docker
 - docker-compose
-#Commands
+
+# Commands:
 - bin/start - installs application and sets up docker
 - bin/stop - stop docker
