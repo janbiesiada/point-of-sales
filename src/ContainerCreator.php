@@ -2,16 +2,19 @@
 
 declare(strict_types=1);
 
-
 namespace JBdev\PointOfSale;
-
 
 use JBdev\PointOfSale\Catalog\Product;
 use JBdev\PointOfSale\Catalog\Product\Container;
+use SimpleXMLElement;
 
 class ContainerCreator
 {
-    public static function create(\SimpleXMLElement $items):Container
+    /**
+     * @param SimpleXMLElement $items
+     * @return Container
+     */
+    public static function create(SimpleXMLElement $items): Container
     {
         $container = new Container();
         $productArray = (array) $items;

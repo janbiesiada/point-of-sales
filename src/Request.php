@@ -2,9 +2,7 @@
 
 declare(strict_types=1);
 
-
 namespace JBdev\PointOfSale;
-
 
 class Request
 {
@@ -29,6 +27,9 @@ class Request
         return $products;
     }
 
+    /**
+     * @return string
+     */
     public function getProductCodes():string
     {
         if (isset($_POST["submit"])) {

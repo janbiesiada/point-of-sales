@@ -21,6 +21,12 @@ class Product
      */
     private array $volumePrices;
 
+    /**
+     * Product constructor.
+     * @param string $code
+     * @param float $unitPrice
+     * @param array|null $volumePrices
+     */
     public function __construct(
         string $code,
         float $unitPrice,
@@ -48,14 +54,6 @@ class Product
     }
 
     /**
-     * @param float $unitPrice
-     */
-    public function setUnitPrice(float $unitPrice): void
-    {
-        $this->unitPrice = $unitPrice;
-    }
-
-    /**
      * @param int $qty
      * @return float
      */
@@ -64,7 +62,11 @@ class Product
         return $this->volumePrices[$qty];
     }
 
-    public function setVolumePrice(int $qty,float $price): void
+    /**
+     * @param int $qty
+     * @param float $price
+     */
+    public function setVolumePrice(int $qty, float $price): void
     {
         $this->volumePrices[$qty] = $price;
     }

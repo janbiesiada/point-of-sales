@@ -12,15 +12,22 @@ class Item
      * @var Product
      */
     private Product $product;
+
     /**
      * @var int
      */
     private int $qty;
+
     /**
      * @var string
      */
     private string $itemCode;
 
+    /**
+     * Item constructor.
+     * @param Product $product
+     * @param int $qty
+     */
     public function __construct(
         Product $product,
         int $qty = 0
@@ -46,6 +53,9 @@ class Item
         $this->qty = $qty;
     }
 
+    /**
+     * @return float
+     */
     public function getTotal():float
     {
         if($this->product->hasVolumePrice($this->getQty())){

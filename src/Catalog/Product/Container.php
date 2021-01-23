@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 namespace JBdev\PointOfSale\Catalog\Product;
 
 use Exception;
@@ -25,6 +24,9 @@ class Container
         $this->items = $items ?? [];
     }
 
+    /**
+     * @param Product $product
+     */
     public function addProduct(Product $product):void
     {
         $code = $product->getCode();

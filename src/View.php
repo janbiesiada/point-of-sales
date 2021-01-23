@@ -2,14 +2,17 @@
 
 declare(strict_types=1);
 
-
 namespace JBdev\PointOfSale;
-
 
 class View
 {
-    public function generate( $file, $args ){
-        // ensure the file exists
+    /**
+     * @param $file
+     * @param $args
+     * @return string|null
+     */
+    public function generate($file, $args ): ?string
+    {
         if ( !file_exists( $file ) ) {
             return '';
         }
@@ -18,7 +21,7 @@ class View
         }
         ob_start();
         include $file;
-        return ob_get_clean();
+        $html =  ob_get_clean();
+        return $html??null;
     }
-
 }

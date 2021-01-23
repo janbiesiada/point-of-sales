@@ -2,9 +2,7 @@
 
 declare(strict_types=1);
 
-
 namespace JBdev\PointOfSale;
-
 
 use Exception;
 use JBdev\PointOfSale\Catalog\Product\Container;
@@ -15,15 +13,21 @@ class Terminal
      * @var Container
      */
     private Container $inventory;
+
     /**
      * @var Container
      */
     private Container $cart;
+
     /**
      * @var Exception[]
      */
     private array $errors = [];
 
+    /**
+     * @param Container|null $inventory
+     * @param Container|null $cart
+     */
     public function __construct(
         Container $inventory = null,
         Container $cart = null
@@ -32,6 +36,9 @@ class Terminal
         $this->cart = $cart ?? new Container();
     }
 
+    /**
+     * @param string $code
+     */
     public function scan(string $code):void
     {
         try {
@@ -41,6 +48,9 @@ class Terminal
         }
     }
 
+    /**
+     * @return float
+     */
     public function getCartTotal():float
     {
         return $this->cart->getTotal();
